@@ -1,61 +1,19 @@
 :root {
-  --color-primary: #bb86fc;
-  --color-secondary: #9c4efc;
-  --color-background: #121212;
-  --color-text: #e0e0e0;
-  --font-primary: 'Roboto', sans-serif;
-  --font-secondary: 'Ubuntu', sans-serif;
-  --newsletter-bg: #1a1a1a;
-  --cta-color: #00ff88;
-  --cta-hover: #00cc6a;
-
-  --color-primary: #6366f1;     /* Indigo */
+  --color-primary: #6366f1;     /* Azul Indigo */
   --color-secondary: #4f46e5;   /* Indigo oscuro */
   --color-accent: #10b981;      /* Verde esmeralda */
   --color-dark: #0f172a;        /* Azul noche */
   --color-light: #f8fafc;       /* Blanco helado */
+  --color-text: #e0e0e0;
+  --color-background: #121212;
+  --newsletter-bg: #1a1a1a;
+  --cta-color: #00ff88;
+  --cta-hover: #00cc6a;
 }
 
-/* Modos */
-body { background: var(--color-dark); color: var(--color-light); }
-body.light-mode { background: #fff; color: #1e293b; }
-
-/* Componentes */
-.tool-card {
-  border: 2px solid var(--color-accent);
-  transition: transform 0.3s ease;
-}
-.tool-card:hover { transform: translateY(-5px); }
-
-.phase-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-}
-
-.custom-list {
-  list-style: none;
-  padding: 0;
-}
-.custom-list li { padding: 0.5rem 0; }
-
-pre code {
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 0.9rem;
-}
-
-/* Tablas */
-.table-hover tbody tr:hover {
-  background: rgba(16, 185, 129, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .display-4 { font-size: 2.5rem; }
-}
-
-/* Estilos Generales */
+/* General */
 body {
-  font-family: var(--font-secondary);
+  font-family: 'Ubuntu', sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
@@ -79,22 +37,6 @@ body.light-mode {
   color: var(--color-primary) !important;
 }
 
-.navbar-brand .fa-lock {
-  color: var(--color-primary);
-}
-
-body.light-mode .navbar {
-  background-color: #f8f9fa !important;
-}
-
-body.light-mode .navbar-brand {
-  color: #007bff !important;
-}
-
-body.light-mode .navbar-brand .fa-lock {
-  color: #007bff;
-}
-
 .nav-link {
   color: rgba(255, 255, 255, 0.7) !important;
   padding: 0.75rem 1rem !important;
@@ -104,6 +46,11 @@ body.light-mode .navbar-brand .fa-lock {
 .nav-link:hover {
   color: var(--color-primary) !important;
   background-color: rgba(187, 134, 252, 0.1) !important;
+}
+
+/* Modo Claro para Navbar */
+body.light-mode .navbar {
+  background-color: #f8f9fa !important;
 }
 
 body.light-mode .nav-link {
@@ -123,25 +70,17 @@ body.light-mode .nav-link:hover {
   margin-bottom: 3rem;
   text-align: center;
   border-radius: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Cambio de color del texto "Aprende a proteger tus sistemas y datos" */
+.jumbotron .lead {
+  color: var(--color-primary); /* Usa el azul principal */
+  font-weight: bold;
 }
 
 body.light-mode .jumbotron {
   background: linear-gradient(45deg, #f8f9fa, #e9ecef);
   color: #2d2d2d;
-  border: 1px solid #dee2e6;
-  text-shadow: none;
-}
-
-.jumbotron h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-.jumbotron .lead {
-  font-size: 1.8rem;
-  opacity: 0.95;
 }
 
 /* Tarjetas */
@@ -157,6 +96,7 @@ body.light-mode .jumbotron {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
+/* Ajuste en modo claro */
 body.light-mode .card {
   background-color: #ffffff;
   border: 1px solid #dee2e6;
@@ -164,18 +104,35 @@ body.light-mode .card {
 
 .card-title {
   color: var(--color-primary);
-  font-family: var(--font-primary);
+  font-family: 'Roboto', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 .card-text {
   color: var(--color-text);
-  font-family: var(--font-primary);
 }
 
-body.light-mode .card-title {
-  color: #007bff;
+/* Modo oscuro para tarjetas */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: var(--color-light);
+  border: 1px solid #333;
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-text {
+  color: var(--color-light);
+}
+
+body.dark-mode .btn-outline-primary {
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
 }
 
 /* Botones */
@@ -191,11 +148,6 @@ body.light-mode .card-title {
   transform: translateY(-2px);
 }
 
-body.light-mode .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
 /* Newsletter */
 .newsletter-section {
   padding: 4rem 0;
@@ -203,22 +155,10 @@ body.light-mode .btn-primary {
   margin-top: 4rem;
 }
 
-.newsletter-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .newsletter-content h2 {
   color: var(--cta-color);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.newsletter-content .lead {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
 }
 
 .newsletter-benefits {
@@ -237,92 +177,11 @@ body.light-mode .btn-primary {
   padding: 0.8rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.newsletter-benefits li:hover {
-  transform: translateX(10px);
 }
 
 .newsletter-benefits i {
   color: var(--cta-color);
   font-size: 1.3rem;
-}
-
-.newsletter-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.input-group {
-  position: relative;
-  margin: 2rem 0;
-}
-
-.form-control {
-  height: 50px;
-  border-radius: 30px;
-  padding: 0 1.5rem;
-  font-size: 1rem;
-  border: 2px solid transparent;
-}
-
-.form-control:focus {
-  border-color: var(--cta-color);
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
-}
-
-.btn-cta {
-  background: var(--cta-color);
-  color: #000;
-  font-weight: 700;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  border: none;
-  transition: all 0.3s ease;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
-}
-
-.btn-cta:hover {
-  background: var(--cta-hover);
-  transform: scale(1.05);
-}
-
-.privacy-text {
-  display: block;
-  color: #aaa;
-  font-size: 0.9rem;
-  margin-top: 1rem;
-}
-
-/* Modo Claro para Newsletter */
-body.light-mode .newsletter-section {
-  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-}
-
-body.light-mode .newsletter-content h2 {
-  color: #007bff;
-  text-shadow: none;
-}
-
-body.light-mode .newsletter-benefits li {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .newsletter-benefits i {
-  color: #007bff;
-}
-
-body.light-mode .btn-cta {
-  background: #007bff;
-  color: #fff;
-}
-
-body.light-mode .btn-cta:hover {
-  background: #0056b3;
 }
 
 /* Footer */
@@ -374,20 +233,6 @@ body.light-mode footer {
 
   .jumbotron .lead {
     font-size: 1.4rem;
-  }
-
-  .btn-cta {
-    position: static;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .input-group {
-    flex-direction: column;
-  }
-
-  .form-control {
-    margin-bottom: 1rem;
   }
 
   .newsletter-floating {
