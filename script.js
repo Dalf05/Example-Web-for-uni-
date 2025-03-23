@@ -79,3 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById('toggle-dark-mode').addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-dark-mode");
+    if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+        });
+    } else {
+        console.error("El botón de modo oscuro no se encontró.");
+    }
+});
