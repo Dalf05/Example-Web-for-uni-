@@ -244,3 +244,18 @@ body.light-mode footer {
     margin-top: 1rem;
   }
 }
+
+/* Aplica el color azul definido en la raíz */
+.jumbotron .lead {
+    color: var(--color-primary); /* Usa el color primario definido en CSS */
+    font-weight: bold;
+}
+
+/* Modo oscuro: Asegurar que los textos en "Recursos Útiles" sean claros */
+@media (prefers-color-scheme: dark) {
+    #recursos h3,
+    #recursos p,
+    #recursos a {
+        color: var(--color-light); /* Color claro en modo oscuro */
+    }
+}
