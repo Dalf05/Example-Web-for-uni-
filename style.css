@@ -253,24 +253,23 @@ body.light-mode footer {
 
 /* Modo oscuro: Asegurar que los textos en "Recursos Útiles" sean claros */
 @media (prefers-color-scheme: dark) {
-    #recursos h3,
-    #recursos p,
-    #recursos a {
-        color: var(--color-light) !important; /* Texto claro */
+    #recursos .card {
+        background-color: #333 !important; /* Fondo más claro para mejor contraste */
+        border: 1px solid #555 !important;
     }
 
-    #recursos .card {
-        background-color: #222 !important; /* Fondo oscuro para contraste */
-        border: 1px solid #444 !important;
+    #recursos h3,
+    #recursos p {
+        color: #ffffff !important; /* Texto completamente blanco para máxima legibilidad */
     }
 
     #recursos .btn-outline-primary {
-        color: var(--color-light) !important;
-        border-color: var(--color-light) !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
     }
 
     #recursos .btn-outline-primary:hover {
-        background-color: var(--color-light) !important;
-        color: var(--color-dark) !important;
+        background-color: #ffffff !important;
+        color: #333 !important;
     }
 }
