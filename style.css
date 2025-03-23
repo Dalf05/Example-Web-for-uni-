@@ -256,6 +256,21 @@ body.light-mode footer {
     #recursos h3,
     #recursos p,
     #recursos a {
-        color: var(--color-light); /* Color claro en modo oscuro */
+        color: var(--color-light) !important; /* Texto claro */
+    }
+
+    #recursos .card {
+        background-color: #222 !important; /* Fondo oscuro para contraste */
+        border: 1px solid #444 !important;
+    }
+
+    #recursos .btn-outline-primary {
+        color: var(--color-light) !important;
+        border-color: var(--color-light) !important;
+    }
+
+    #recursos .btn-outline-primary:hover {
+        background-color: var(--color-light) !important;
+        color: var(--color-dark) !important;
     }
 }
