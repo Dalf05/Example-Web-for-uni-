@@ -25,4 +25,4 @@ Sitio web educativo sobre hacking ético y ciberseguridad, creado para aprender 
 - **Fuentes**: Google Fonts (Roboto y Ubuntu)
 - **Hosting**: GitHub Pages
 
-Link de la Web: https://dalf05.github.io/Example-Website/
+Link de la Web: (https://dalf05.github.io/Example-Web-for-uni-/)
